@@ -110,7 +110,8 @@ function App() {
           <TodoList 
             todos={filteredTodos} 
             toggleTodo={toggleTodo} 
-            deleteTodo={deleteTodo} 
+            deleteTodo={deleteTodo}
+            filter={filter}
           />
         )}
         

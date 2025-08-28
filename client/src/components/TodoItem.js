@@ -1,8 +1,11 @@
 import React from 'react';
 
-function TodoItem({ todo, toggleTodo, deleteTodo }) {
+function TodoItem({ todo, toggleTodo, deleteTodo, filter }) {
+  // Only apply the 'completed' class if the todo is completed AND we're not in the completed filter
+  const showStrikethrough = todo.completed && filter !== 'completed';
+  
   return (
-    <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+    <li className={`todo-item ${showStrikethrough ? 'completed' : ''}`}>
       <input
         type="checkbox"
         className="todo-checkbox"
